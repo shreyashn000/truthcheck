@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TRUTHCHECK | AI-Assisted Fake News Detection</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav class="navbar">
+
+    <div class="nav-container">
+
+        <a href="/" class="logo">
+            
+            <span>TRUTHCHECK</span>
+        </a>
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Open menu">
+            ☰
+        </button>
+
+        <div class="nav-links" id="navLinks">
+
+            <a href="/" class="active">Home</a>
+
+            <a href="/detect">
+                Detect News
+            </a>
+
+            <a href="/how-it-works">
+                How It Works
+            </a>
+
+            <a href="/media-literacy">
+                Media Literacy
+            </a>
+
+            <a href="/about">
+                About
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="home-hero">
+
+    <div class="home-hero-background">
+        <span>TRUTH</span>
+    </div>
+
+    <div class="home-hero-container">
+
+        <div class="home-hero-content">
+
+            <span class="section-tag">
+                AI-ASSISTED NEWS ANALYSIS
+            </span>
+
+            <h1>
+                Is this news
+                <span>real or fake?</span>
+            </h1>
+
+            <p>
+                TRUTHCHECK uses Natural Language Processing and
+                Machine Learning to analyse news text and provide
+                an AI-assisted prediction.
+            </p>
+
+            <div class="home-hero-buttons">
+
+                <a href="/detect" class="primary-button">
+                    Check News →
+                </a>
+
+                <a href="/how-it-works" class="text-button">
+                    How It Works
+                </a>
+
+            </div>
+
+            <div class="hero-note">
+
+                <span class="hero-note-dot"></span>
+
+                <span>
+                    AI prediction • Human verification
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- ANALYSIS CARD -->
+
+        <div class="hero-analysis-card">
+
+            <div class="analysis-card-top">
+
+                <span>
+                    LIVE ANALYSIS
+                </span>
+
+                <span class="analysis-status">
+                    ● READY
+                </span>
+
+            </div>
+
+
+            <div class="analysis-example">
+
+                <span class="analysis-label">
+                    NEWS INPUT
+                </span>
+
+                <p>
+                    “Government announces a new public
+                    initiative across several regions...”
+                </p>
+
+            </div>
+
+
+            <div class="analysis-divider"></div>
+
+
+            <div class="analysis-result">
+
+                <div>
+
+                    <span class="analysis-label">
+                        MODEL RESULT
+                    </span>
+
+                    <h3>
+                        LIKELY REAL
+                    </h3>
+
+                </div>
+
+                <div class="analysis-confidence">
+
+                    <strong>
+                        78%
+                    </strong>
+
+                    <span>
+                        CONFIDENCE
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="analysis-bar">
+
+                <div class="analysis-bar-fill"></div>
+
+            </div>
+
+
+            <p class="analysis-disclaimer">
+                Demonstration only. AI output is not a
+                factual verdict.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     INTRODUCTION
+===================================================== -->
+
+<section class="home-intro">
+
+    <div class="section-container">
+
+        <div class="home-intro-grid">
+
+            <div>
+
+                <span class="section-tag">
+                    THE PROBLEM
+                </span>
+
+                <h2>
+                    Information moves
+                    <span>faster than verification.</span>
+                </h2>
+
+            </div>
+
+
+            <div class="home-intro-text">
+
+                <p>
+                    News and information can reach thousands of
+                    people within seconds through social media,
+                    messaging platforms and online websites.
+                </p>
+
+                <p>
+                    This makes it important to develop the habit
+                    of checking sources, dates and evidence before
+                    accepting or sharing information.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FEATURES
+===================================================== -->
+
+<section class="home-features">
+
+    <div class="section-container">
+
+        <div class="section-heading">
+
+            <span class="section-tag">
+                WHAT TRUTHCHECK DOES
+            </span>
+
+            <h2>
+                Technology with a
+                <span>purpose.</span>
+            </h2>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+
+                <span class="feature-number">
+                    01
+                </span>
+
+                <div class="feature-icon">
+                    AI
+                </div>
+
+                <h3>
+                    AI-Assisted Analysis
+                </h3>
+
+                <p>
+                    Analyse news text using a machine-learning
+                    classification model trained on labelled
+                    news examples.
+                </p>
+
+                <a href="/detect">
+                    Try the detector →
+                </a>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <span class="feature-number">
+                    02
+                </span>
+
+                <div class="feature-icon">
+                    NLP
+                </div>
+
+                <h3>
+                    Natural Language Processing
+                </h3>
+
+                <p>
+                    TF-IDF converts news text into numerical
+                    features that can be processed by the
+                    classification model.
+                </p>
+
+                <a href="/how-it-works">
+                    Explore the process →
+                </a>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <span class="feature-number">
+                    03
+                </span>
+
+                <div class="feature-icon">
+                    ✓
+                </div>
+
+                <h3>
+                    Media Literacy
+                </h3>
+
+                <p>
+                    Learn practical methods for checking sources,
+                    dates, evidence and multiple credible sources.
+                </p>
+
+                <a href="/media-literacy">
+                    Learn verification →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     HOW IT WORKS PREVIEW
+===================================================== -->
+
+<section class="home-process">
+
+    <div class="section-container">
+
+        <div class="process-header">
+
+            <div>
+
+                <span class="section-tag">
+                    SIMPLE PROCESS
+                </span>
+
+                <h2>
+                    From news text
+                    <span>to prediction.</span>
+                </h2>
+
+            </div>
+
+            <a href="/how-it-works" class="secondary-button">
+                Full Methodology →
+            </a>
+
+        </div>
+
+
+        <div class="process-flow">
+
+            <div class="process-item">
+
+                <span>01</span>
+
+                <h3>
+                    Enter
+                </h3>
+
+                <p>
+                    Submit a news headline
+                    or article.
+                </p>
+
+            </div>
+
+
+            <div class="process-arrow">
+                →
+            </div>
+
+
+            <div class="process-item">
+
+                <span>02</span>
+
+                <h3>
+                    Convert
+                </h3>
+
+                <p>
+                    TF-IDF transforms
+                    the text into features.
+                </p>
+
+            </div>
+
+
+            <div class="process-arrow">
+                →
+            </div>
+
+
+            <div class="process-item">
+
+                <span>03</span>
+
+                <h3>
+                    Classify
+                </h3>
+
+                <p>
+                    Logistic Regression
+                    analyses the features.
+                </p>
+
+            </div>
+
+
+            <div class="process-arrow">
+                →
+            </div>
+
+
+            <div class="process-item">
+
+                <span>04</span>
+
+                <h3>
+                    Verify
+                </h3>
+
+                <p>
+                    Check reliable sources
+                    before sharing.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     RESULT CATEGORIES
+===================================================== -->
+
+<section class="home-results">
+
+    <div class="section-container">
+
+        <div class="section-heading">
+
+            <span class="section-tag">
+                PREDICTION CATEGORIES
+            </span>
+
+            <h2>
+                Three possible
+                <span>outcomes.</span>
+            </h2>
+
+        </div>
+
+
+        <div class="result-category-grid">
+
+            <div class="result-category">
+
+                <span class="category-number">
+                    01
+                </span>
+
+                <h3>
+                    LIKELY REAL
+                </h3>
+
+                <p>
+                    The model finds patterns more closely
+                    associated with real-news examples in
+                    its training data.
+                </p>
+
+            </div>
+
+
+            <div class="result-category">
+
+                <span class="category-number">
+                    02
+                </span>
+
+                <h3>
+                    LIKELY FAKE
+                </h3>
+
+                <p>
+                    The model finds patterns more closely
+                    associated with fake-news examples in
+                    its training data.
+                </p>
+
+            </div>
+
+
+            <div class="result-category">
+
+                <span class="category-number">
+                    03
+                </span>
+
+                <h3>
+                    UNCERTAIN
+                </h3>
+
+                <p>
+                    The model is not sufficiently confident,
+                    so independent verification is especially
+                    important.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     IMPORTANT WARNING
+===================================================== -->
+
+<section class="home-warning">
+
+    <div class="section-container">
+
+        <div class="warning-inner">
+
+            <div class="warning-mark">
+                !
+            </div>
+
+            <div>
+
+                <span class="section-tag">
+                    IMPORTANT
+                </span>
+
+                <h2>
+                    An AI prediction is
+                    <span>not a fact-check.</span>
+                </h2>
+
+                <p>
+                    TRUTHCHECK identifies patterns learned from
+                    its training data. It cannot independently
+                    establish whether a real-world claim is true
+                    or false.
+                </p>
+
+                <a href="/media-literacy"
+                   class="secondary-button">
+                    Learn How To Verify →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FINAL CTA
+===================================================== -->
+
+<section class="home-cta">
+
+    <div class="section-container">
+
+        <span class="section-tag">
+            START CHECKING
+        </span>
+
+        <h2>
+            Don't just
+            <span>share.</span>
+        </h2>
+
+        <p>
+            Analyse the text. Check the source.
+            Verify the claim.
+        </p>
+
+        <a href="/detect" class="primary-button">
+            Check News →
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-brand">
+
+            <div class="logo">
+
+                <span class="logo-mark">
+                    T
+                </span>
+
+                <span>
+                    TRUTHCHECK
+                </span>
+
+            </div>
+
+            <p>
+                AI-Assisted Fake News Detection &
+                Digital Media Literacy
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="/">Home</a>
+
+            <a href="/detect">
+                Detect News
+            </a>
+
+            <a href="/how-it-works">
+                How It Works
+            </a>
+
+            <a href="/media-literacy">
+                Media Literacy
+            </a>
+
+            <a href="/about">
+                About
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            Community Engagement Project
+            • B.Sc. Information Technology
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

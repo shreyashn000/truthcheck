@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="How TRUTHCHECK AI-assisted fake news detection works">
+
+    <title>How It Works | TRUTHCHECK</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <a href="/" class="logo">
+            TRUTH<span>CHECK</span>
+        </a>
+
+        <nav class="navbar">
+    <div class="nav-container">
+
+        <a href="/" class="logo">
+            <span class="logo-mark">T</span>
+            <span>TRUTHCHECK</span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+            ☰
+        </button>
+
+        <div class="nav-links" id="navLinks">
+            <a href="/">Home</a>
+            <a href="/detect">Detect News</a>
+            <a href="/how-it-works">How It Works</a>
+            <a href="/media-literacy">Media Literacy</a>
+            <a href="/about">About</a>
+        </div>
+
+    </div>
+</nav>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     PAGE HEADER
+========================= -->
+
+<main>
+
+<section class="info-hero">
+
+    <div class="section-tag">
+        THE TECHNOLOGY
+    </div>
+
+    <h1>
+        How does<br>
+        <span>TRUTHCHECK work?</span>
+    </h1>
+
+    <p>
+        TRUTHCHECK uses Natural Language Processing and
+        Machine Learning to classify submitted news text
+        according to patterns learned from labelled news data.
+    </p>
+
+</section>
+
+
+<!-- =========================
+     PIPELINE
+========================= -->
+
+<section class="technology-section">
+
+    <div class="section-tag">
+        MACHINE LEARNING PIPELINE
+    </div>
+
+    <div class="pipeline">
+
+        <div class="pipeline-step">
+
+            <div class="pipeline-number">
+                01
+            </div>
+
+            <div>
+
+                <h2>
+                    News Dataset
+                </h2>
+
+                <p>
+                    A labelled dataset containing examples of
+                    real and fake news is used to train and
+                    evaluate the Machine Learning model.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="pipeline-arrow">
+            ↓
+        </div>
+
+
+        <div class="pipeline-step">
+
+            <div class="pipeline-number">
+                02
+            </div>
+
+            <div>
+
+                <h2>
+                    Data Preprocessing
+                </h2>
+
+                <p>
+                    The text data is cleaned and prepared.
+                    Missing values and duplicate content are
+                    handled before model training.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="pipeline-arrow">
+            ↓
+        </div>
+
+
+        <div class="pipeline-step">
+
+            <div class="pipeline-number">
+                03
+            </div>
+
+            <div>
+
+                <h2>
+                    TF-IDF
+                </h2>
+
+                <p>
+                    Term Frequency–Inverse Document Frequency
+                    converts news text into numerical features
+                    that can be processed by the classifier.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="pipeline-arrow">
+            ↓
+        </div>
+
+
+        <div class="pipeline-step">
+
+            <div class="pipeline-number">
+                04
+            </div>
+
+            <div>
+
+                <h2>
+                    Logistic Regression
+                </h2>
+
+                <p>
+                    The classifier learns patterns associated
+                    with the labelled real-news and fake-news
+                    examples in the training dataset.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="pipeline-arrow">
+            ↓
+        </div>
+
+
+        <div class="pipeline-step">
+
+            <div class="pipeline-number">
+                05
+            </div>
+
+            <div>
+
+                <h2>
+                    Prediction
+                </h2>
+
+                <p>
+                    New news text is transformed using the
+                    trained TF-IDF vectorizer and passed to
+                    the trained classification model.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="pipeline-arrow">
+            ↓
+        </div>
+
+
+        <div class="pipeline-step">
+
+            <div class="pipeline-number">
+                06
+            </div>
+
+            <div>
+
+                <h2>
+                    Result
+                </h2>
+
+                <p>
+                    The website displays an AI-assisted result
+                    as Likely Real, Likely Fake or Uncertain,
+                    together with a confidence score.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     TECHNOLOGIES
+========================= -->
+
+<section class="tech-stack">
+
+    <div class="section-tag">
+        TECHNOLOGY STACK
+    </div>
+
+    <h2>
+        Built with<br>
+        <span>practical technologies.</span>
+    </h2>
+
+
+    <div class="tech-grid">
+
+        <div class="tech-card">
+
+            <span>01</span>
+
+            <h3>
+                Python
+            </h3>
+
+            <p>
+                Used for data processing, Machine Learning
+                model development and backend integration.
+            </p>
+
+        </div>
+
+
+        <div class="tech-card">
+
+            <span>02</span>
+
+            <h3>
+                Scikit-learn
+            </h3>
+
+            <p>
+                Used for TF-IDF feature extraction,
+                Logistic Regression and model evaluation.
+            </p>
+
+        </div>
+
+
+        <div class="tech-card">
+
+            <span>03</span>
+
+            <h3>
+                Flask
+            </h3>
+
+            <p>
+                Provides the Python-based web application
+                backend and connects the website to the model.
+            </p>
+
+        </div>
+
+
+        <div class="tech-card">
+
+            <span>04</span>
+
+            <h3>
+                HTML / CSS / JavaScript
+            </h3>
+
+            <p>
+                Used to create the responsive user interface
+                and interactive news-analysis experience.
+            </p>
+
+        </div>
+
+
+        <div class="tech-card">
+
+            <span>05</span>
+
+            <h3>
+                Pandas
+            </h3>
+
+            <p>
+                Used to load, clean, transform and analyse
+                the news dataset.
+            </p>
+
+        </div>
+
+
+        <div class="tech-card">
+
+            <span>06</span>
+
+            <h3>
+                Joblib
+            </h3>
+
+            <p>
+                Used to save and load the trained Machine
+                Learning model and TF-IDF vectorizer.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PREDICTION EXPLANATION
+========================= -->
+
+<section class="prediction-section">
+
+    <div class="section-tag">
+        UNDERSTANDING THE RESULT
+    </div>
+
+    <h2>
+        Three possible<br>
+        <span>outcomes.</span>
+    </h2>
+
+
+    <div class="prediction-grid">
+
+        <div class="prediction-card">
+
+            <div class="prediction-symbol">
+                01
+            </div>
+
+            <h3>
+                LIKELY REAL
+            </h3>
+
+            <p>
+                The model identifies the submitted text as
+                being more closely associated with the
+                real-news patterns learned during training.
+            </p>
+
+        </div>
+
+
+        <div class="prediction-card">
+
+            <div class="prediction-symbol">
+                02
+            </div>
+
+            <h3>
+                LIKELY FAKE
+            </h3>
+
+            <p>
+                The model identifies the submitted text as
+                being more closely associated with the
+                fake-news patterns learned during training.
+            </p>
+
+        </div>
+
+
+        <div class="prediction-card">
+
+            <div class="prediction-symbol">
+                03
+            </div>
+
+            <h3>
+                UNCERTAIN
+            </h3>
+
+            <p>
+                The model does not have sufficient confidence
+                for a strong classification, so additional
+                verification is recommended.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     LIMITATIONS
+========================= -->
+
+<section class="limitations">
+
+    <div class="limitations-inner">
+
+        <div class="section-tag">
+            IMPORTANT LIMITATION
+        </div>
+
+        <h2>
+            A prediction is<br>
+            <span>not a fact-check.</span>
+        </h2>
+
+        <p>
+            TRUTHCHECK is an educational AI-assisted
+            classification system. It learns patterns from
+            its training dataset and applies those patterns
+            to new text. It does not independently verify
+            the truth of real-world claims, access every
+            news source on the internet, or guarantee that
+            an article is factually accurate.
+        </p>
+
+        <p>
+            Users should therefore verify important
+            information using reliable sources, official
+            statements and independent reporting before
+            making decisions or sharing the information.
+        </p>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        TRUTHCHECK
+    </div>
+
+    <p>
+        AI-Assisted Fake News Detection &
+        Digital Media Literacy
+    </p>
+
+    <p class="copyright">
+        B.Sc. Information Technology ·
+        Community Engagement Project
+    </p>
+
+</footer>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>     
