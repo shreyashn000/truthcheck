@@ -221,22 +221,90 @@ async function checkNews() {
             reviewsContainer.appendChild(noReviews);
         }
 
-        /* DISPLAY ML SIGNAL SEPARATELY */
+/* DISPLAY SECONDARY AI MODEL SIGNAL */
 
-        if (data.ml_signal) {
-            const mlInfo = document.createElement("p");
-            mlInfo.style.marginTop = "16px";
-            mlInfo.textContent =
-                "Secondary AI model signal: " +
-                data.ml_signal +
-                (data.ml_confidence !== null &&
-                 data.ml_confidence !== undefined
-                    ? " (" + data.ml_confidence +
-                      "% model confidence)"
-                    : "");
+if (data.ml_signal) {
+    const mlInfo = document.createElement("section");
 
-            reviewsContainer.appendChild(mlInfo);
-        }
+    const signal = String(data.ml_signal).toUpperCase();
+
+    let signalClass = "signal-uncertain";
+    let signalIcon = "◈";
+    let statusText = "UNCERTAIN SIGNAL";
+    let explanation =
+        "The model could not confidently classify this text. " +
+        "Check the original source and compare reliable reports.";
+
+    if (signal.includes("REAL")) {
+        signalClass = "signal-real";
+        signalIcon = "✓";
+        statusText = "LIKELY REAL";
+        explanation =
+            "The model detected patterns associated with real news " +
+            "in its training data. Independent verification is still needed.";
+    } else if (signal.includes("FAKE")) {
+        signalClass = "signal-fake";
+        signalIcon = "!";
+        statusText = "LIKELY FAKE";
+        explanation =
+            "The model detected patterns associated with fake news " +
+            "in its training data. Review reliable sources before drawing a conclusion.";
+    }
+
+    mlInfo.className = "ml-signal-card " + signalClass;
+
+    const headingRow = document.createElement("div");
+    headingRow.className = "ml-signal-heading";
+
+    const icon = document.createElement("div");
+    icon.className = "ml-signal-icon";
+    icon.textContent = signalIcon;
+
+    const headingContent = document.createElement("div");
+
+    const label = document.createElement("p");
+    label.textContent = "SECONDARY AI ANALYSIS";
+
+    const title = document.createElement("h3");
+    title.textContent = "Machine Learning Model Signal";
+
+    const status = document.createElement("span");
+    status.className = "ml-signal-status";
+    status.textContent = statusText;
+
+    headingContent.append(label, title, status);
+    headingRow.append(icon, headingContent);
+
+    const signalText = document.createElement("p");
+    signalText.textContent = "Model output: " + data.ml_signal;
+
+    if (
+        data.ml_confidence !== null &&
+        data.ml_confidence !== undefined &&
+        Number.isFinite(Number(data.ml_confidence))
+    ) {
+        signalText.textContent +=
+            " · " + data.ml_confidence + "% model confidence";
+    }
+
+    const explanationText = document.createElement("p");
+    explanationText.textContent = explanation;
+
+    const note = document.createElement("p");
+    note.className = "ml-signal-note";
+    note.textContent =
+        "Important: This is an automated prediction, not a verified " +
+        "fact-check. Model confidence does not establish whether a claim is true.";
+
+    mlInfo.append(
+        headingRow,
+        signalText,
+        explanationText,
+        note
+    );
+
+    reviewsContainer.appendChild(mlInfo);
+}
 
         result.style.display = "block";
 
