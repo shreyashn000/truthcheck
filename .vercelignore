@@ -1,0 +1,8 @@
+dataset/
+venv/
+.venv/
+__pycache__/
+*.pyc
+.git/
+.ipynb_checkpoints/
+tests/
