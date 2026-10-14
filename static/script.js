@@ -375,7 +375,7 @@ function loadSample(type) {
 
     if (type === "fake") {
         input.value =
-            "Government announces that every citizen will receive free smartphones tomorrow. Share this message with all your contacts immediately to claim your benefit.";
+            "India's Chandrayaan-3 mission successfully landed near the Moon's south polar region on August 23, 2023, making India the first country to achieve a successful landing in that region.";
     } else {
         input.value =
             "The government announced a new public initiative today, with officials stating that the programme will be implemented in phases across several regions.";
